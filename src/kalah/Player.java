@@ -1,16 +1,16 @@
 package kalah;
 
 public enum  Player {
-    Player1 ( "Player 1"),
-    Player2 ("Player 2");
+    PLAYER1("Player P1"),
+    PLAYER2("Player P2");
 
-    private final String name;
+    private final String id;
 
-    Player(String name) {
-        this.name = name;
+    Player(String id) {
+        this.id = id;
     }
 
-    private String name(){
-        return name;
+    public String id(){
+        return id;
     }
 }

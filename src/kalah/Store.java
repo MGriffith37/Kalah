@@ -15,4 +15,8 @@ public class Store extends Pit {
         }
         return false;
     }
+
+    public int empty(){
+        return _seedCount;
+    }
 }

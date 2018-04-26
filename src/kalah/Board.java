@@ -1,5 +1,7 @@
 package kalah;
 
+import com.sun.tools.classfile.ConstantPool;
+
 public class Board {
 
     private Pit[] _pits;
@@ -9,13 +11,13 @@ public class Board {
         initialise();
     }
     private void initialise() {
-        Player player = Player.Player1;
+        Player player = Player.PLAYER1;
         for(int i = 0; i < 6; i++) {
             _pits[i] = new House(player, i + 1);
         }
         _pits[6] = new Store(player);
 
-        player = Player.Player2;
+        player = Player.PLAYER2;
         for(int i = 7; i < 13; i++) {
             _pits[i] = new House(player, i-1);
         }
@@ -23,12 +25,12 @@ public class Board {
 
     }
 
-    public boolean isInPlay() {
+    public boolean isInPlay(Player currentPlayer) {
         for(int i = 0; i < 6; i++){
             if(!_pits[i].isEmpty()){
                 break;
             }
-            if(i == 5){
+            if(i == 5 && currentPlayer == Player.PLAYER1){
                 return false;
             }
         }
@@ -36,8 +38,11 @@ public class Board {
             if(!_pits[i].isEmpty()) {
                 return true;
             }
+            if(i == 12 && currentPlayer == Player.PLAYER2){
+                return false;
+            }
         }
-        return false;
+        return true;
     }
 
     public int[] getBoardState(){
@@ -48,36 +53,72 @@ public class Board {
         return simplePits;
     }
 
-    public void distribute(Player currentPlayer, int pitNo) {
-       int index;
-        if(currentPlayer.equals(Player.Player1)){
-            index = pitNo-1;
+    public MoveOutcome makeMove(Player currentPlayer, int pitNo) throws InvalidTurnException{
+       int pitIndex;
+        if(currentPlayer.equals(Player.PLAYER1)){
+            pitIndex = pitNo-1;
         }else{
-            index = pitNo + 6;
+            pitIndex = pitNo + 6;
         }
-        int seedCount = _pits[index]._seedCount;
-        _pits[index]._seedCount = 0;
+        if(_pits[pitIndex].isEmpty()){
+            throw new InvalidTurnException();
+        }
+        int seedCount = _pits[pitIndex].empty();
+
         for(int i = 1; i <= seedCount; i++){
-            if(!_pits[(index+i)%14].increment(currentPlayer)){
-                seedCount++;
-            }
 
             if(i == seedCount){
-                if(_pits[i].isEmpty() && _pits[i].getClass().equals(House.class)){
-                    capture(_pits[i]);
+                if(_pits[(pitIndex+i)%14].getClass().equals(Store.class)){
+                    if(_pits[(pitIndex+i)%14].increment(currentPlayer)){
+                        return MoveOutcome.RepeatTurn;
+                    }
+                } else if(_pits[(pitIndex+i)%14].isEmpty() && _pits[(pitIndex+i)%14].getClass().equals(House.class) && _pits[(pitIndex+i) % 14]._player == currentPlayer) {
+                    _pits[(pitIndex+i)%14].increment(currentPlayer);
+
+                    capture((pitIndex+i)%14);
+                    return MoveOutcome.Normal;
                 }
-                /**
-                 * and end on mancala store
-                 * promptRepeatTurn();
-                 * or house belongs to player and is empty
-                 * capture();
-                 */
+            }
+
+            if(!_pits[(pitIndex+i)%14].increment(currentPlayer)){
+                seedCount++;
             }
         }
-
+        return MoveOutcome.Normal;
     }
 
-    private void capture(Pit pit) {
+    private void capture(int pitIndex) {
+        int oppPitIndex = determineOppositePit(pitIndex);
+        if(_pits[oppPitIndex].isEmpty()){
+            return;
+        }
+        int seedCount = _pits[pitIndex].empty() + _pits[oppPitIndex].empty();
 
+        if(oppPitIndex < 6){
+            _pits[13]._seedCount += seedCount;
+        }else {
+            _pits[6]._seedCount += seedCount;
+        }
+    }
+
+    private int determineOppositePit(int index){
+        return 12 - index;
+    }
+
+    public int getTotal(Player player) {
+        int sum = 0;
+        switch(player){
+            case PLAYER1:
+                for(int i = 0; i < 7; i++) {
+                    sum += _pits[i]._seedCount;
+                }
+                break;
+            case PLAYER2:
+                for(int i = 7; i < 14; i++) {
+                    sum += _pits[i]._seedCount;
+                }
+                break;
+        }
+        return sum;
     }
 }

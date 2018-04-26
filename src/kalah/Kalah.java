@@ -15,39 +15,77 @@ public class Kalah {
 	public void play(IO io) {
 
 		Board gameBoard = new Board();
-		Player currentPlayer = Player.Player1;
+		Player currentPlayer = Player.PLAYER1;
+		int[] currentBoardState = gameBoard.getBoardState();
 
-		while(gameBoard.isInPlay()){
+		io.println("+----+-------+-------+-------+-------+-------+-------+----+");
+		io.println(String.format("| P2 | 6[%2s] | 5[%2s] | 4[%2s] | 3[%2s] | 2[%2s] | 1[%2s] | %2s |",
+				currentBoardState[12], currentBoardState[11],currentBoardState[10], currentBoardState[9], currentBoardState[8], currentBoardState[7], currentBoardState[6]
+		));
+		io.println("|    |-------+-------+-------+-------+-------+-------|    |");
+		io.println(String.format("| %2s | 1[%2s] | 2[%2s] | 3[%2s] | 4[%2s] | 5[%2s] | 6[%2s] | P1 |",
+				currentBoardState[13], currentBoardState[0],currentBoardState[1], currentBoardState[2], currentBoardState[3], currentBoardState[4], currentBoardState[5]
+		));
+		io.println("+----+-------+-------+-------+-------+-------+-------+----+");
 
-			int[] currentBoardState = gameBoard.getBoardState();
-			//Use string.format() with %2s
-			io.println("+----+-------+-------+-------+-------+-------+-------+----+");
-			io.println("| P2 | 6[ "+currentBoardState[12]+"] | 5[ "+currentBoardState[11]+"] | 4[ "+currentBoardState[10]+"] | 3[ "+currentBoardState[9]+"] | 2[ "+currentBoardState[8]+"] | 1[ "+currentBoardState[7]+"] |  "+currentBoardState[6]+" |");
-			io.println("|    |-------+-------+-------+-------+-------+-------|    |");
-			io.println("|  "+currentBoardState[13]+" | 1[ "+currentBoardState[0]+"] | 2[ "+currentBoardState[1]+"] | 3[ "+currentBoardState[2]+"] | 4[ "+currentBoardState[3]+"] | 5[ "+currentBoardState[4]+"] | 6[ "+currentBoardState[5]+"] | P1 |");
-			io.println("+----+-------+-------+-------+-------+-------+-------+----+");
+		while(gameBoard.isInPlay(currentPlayer)){
 
-			int houseNumber = io.readInteger(currentPlayer + "'s turn - Specify house number or 'q' to quit: ", 1, 6, -1, "q");
-			io.println("");
+
+
+			int houseNumber = io.readInteger(currentPlayer.id() + "'s turn - Specify house number or 'q' to quit: ", 1, 6, -1, "q");
 
 			if(houseNumber<0){
 				break;
 			}
-
+			MoveOutcome outcome = MoveOutcome.Normal;
 			try{
-				gameBoard.distribute(currentPlayer,  houseNumber);
+				outcome = gameBoard.makeMove(currentPlayer,  houseNumber);
 			} catch (Exception e){
-				//invalid turn
+				io.println("House is empty. Move again.");
+				outcome = MoveOutcome.RepeatTurn;
 			}
+			switch(outcome){
+				case Normal:
+					currentPlayer = (currentPlayer == Player.PLAYER1) ? Player.PLAYER2 : Player.PLAYER1;
+					break;
+				case RepeatTurn:
+					break;
+			}
+			currentBoardState = gameBoard.getBoardState();
 
-			if(currentPlayer.equals(Player.Player1)){
-				currentPlayer = Player.Player2;
-			}else{
-				currentPlayer = Player.Player1;
-			}
+			io.println("+----+-------+-------+-------+-------+-------+-------+----+");
+			io.println(String.format("| P2 | 6[%2s] | 5[%2s] | 4[%2s] | 3[%2s] | 2[%2s] | 1[%2s] | %2s |",
+					currentBoardState[12], currentBoardState[11],currentBoardState[10], currentBoardState[9], currentBoardState[8], currentBoardState[7], currentBoardState[6]
+			));
+			io.println("|    |-------+-------+-------+-------+-------+-------|    |");
+			io.println(String.format("| %2s | 1[%2s] | 2[%2s] | 3[%2s] | 4[%2s] | 5[%2s] | 6[%2s] | P1 |",
+					currentBoardState[13], currentBoardState[0],currentBoardState[1], currentBoardState[2], currentBoardState[3], currentBoardState[4], currentBoardState[5]
+			));
+			io.println("+----+-------+-------+-------+-------+-------+-------+----+");
 
 		}
 
+		io.println("Game over");
+
+		io.println("+----+-------+-------+-------+-------+-------+-------+----+");
+		io.println(String.format("| P2 | 6[%2s] | 5[%2s] | 4[%2s] | 3[%2s] | 2[%2s] | 1[%2s] | %2s |",
+				currentBoardState[12], currentBoardState[11],currentBoardState[10], currentBoardState[9], currentBoardState[8], currentBoardState[7], currentBoardState[6]
+		));
+		io.println("|    |-------+-------+-------+-------+-------+-------|    |");
+		io.println(String.format("| %2s | 1[%2s] | 2[%2s] | 3[%2s] | 4[%2s] | 5[%2s] | 6[%2s] | P1 |",
+				currentBoardState[13], currentBoardState[0],currentBoardState[1], currentBoardState[2], currentBoardState[3], currentBoardState[4], currentBoardState[5]
+		));
+		io.println("+----+-------+-------+-------+-------+-------+-------+----+");
+
+		int p1Sum = gameBoard.getTotal(Player.PLAYER1);
+		int p2Sum = gameBoard.getTotal(Player.PLAYER2);
+		io.println( "\tplayer 1:" + p1Sum);
+		io.println("\tplayer 2:"+ p2Sum);
+		if(p1Sum == p2Sum){
+			io.println("A tie!");
+		}else {
+			io.println(p1Sum > p2Sum ? "Player 1 wins!" : "Player 2 wins!");
+		}
 	}
 
 }

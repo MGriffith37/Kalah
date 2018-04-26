@@ -14,4 +14,11 @@ public class House extends Pit{
         _seedCount++;
         return true;
     }
+
+    @Override
+    public int empty(){
+        int seedsBeforeEmptying = _seedCount;
+        _seedCount = 0;
+        return seedsBeforeEmptying;
+    }
 }

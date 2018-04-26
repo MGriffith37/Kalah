@@ -10,6 +10,7 @@ public abstract class Pit {
     }
 
     public abstract boolean increment(Player currentPlayer);
+    public abstract int empty();
 
     public boolean isEmpty(){
         if(_seedCount == 0){
