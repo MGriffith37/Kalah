@@ -2,22 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b03405a2-ce32-4bc8-86b1-ae04235f7194" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/kalah/InvalidTurnException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/kalah/MoveOutcome.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Kalah/kalah/Board.class" afterPath="$PROJECT_DIR$/out/production/Kalah/kalah/Board.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Kalah/kalah/House.class" afterPath="$PROJECT_DIR$/out/production/Kalah/kalah/House.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/kalah/BoardIO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Kalah/kalah/Kalah$1.class" afterPath="$PROJECT_DIR$/out/production/Kalah/kalah/Kalah$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Kalah/kalah/Kalah.class" afterPath="$PROJECT_DIR$/out/production/Kalah/kalah/Kalah.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Kalah/kalah/Pit.class" afterPath="$PROJECT_DIR$/out/production/Kalah/kalah/Pit.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Kalah/kalah/Player.class" afterPath="$PROJECT_DIR$/out/production/Kalah/kalah/Player.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Kalah/kalah/Store.class" afterPath="$PROJECT_DIR$/out/production/Kalah/kalah/Store.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kalah/Board.java" afterPath="$PROJECT_DIR$/src/kalah/Board.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kalah/House.java" afterPath="$PROJECT_DIR$/src/kalah/House.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kalah/Kalah.java" afterPath="$PROJECT_DIR$/src/kalah/Kalah.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kalah/Pit.java" afterPath="$PROJECT_DIR$/src/kalah/Pit.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kalah/Player.java" afterPath="$PROJECT_DIR$/src/kalah/Player.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kalah/Store.java" afterPath="$PROJECT_DIR$/src/kalah/Store.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,11 +18,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Kalah.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Kalah.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/kalah/Kalah.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="81" column="0" lean-forward="false" selection-start-line="81" selection-start-column="0" selection-end-line="87" selection-end-column="9" />
+            <state relative-caret-position="244">
+              <caret line="22" column="47" lean-forward="false" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -41,34 +30,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MockIO.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/kalah.jar!/com/qualitascorpus/testsupport/MockIO.class">
+      <file leaf-file-name="BoardIO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/kalah/BoardIO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="146">
-              <caret line="171" column="0" lean-forward="false" selection-start-line="171" selection-start-column="0" selection-end-line="171" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TestKalah.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/kalah.jar!/kalah/test/TestKalah.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-166">
-              <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+            <state relative-caret-position="234">
+              <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
               <folding>
-                <element signature="e#1041#1042#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#1390#1391#0" expanded="true" />
+                <element signature="e#1430#1431#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="full_game1.txt" pinned="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/kalah.jar!/test/full_game1.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-12">
-              <caret line="205" column="29" lean-forward="false" selection-start-line="205" selection-start-column="29" selection-end-line="205" selection-end-column="29" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -83,29 +54,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Board.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Board.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/kalah/Board.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="120" column="9" lean-forward="true" selection-start-line="120" selection-start-column="9" selection-end-line="120" selection-end-column="9" />
+            <state relative-caret-position="4">
+              <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding>
                 <element signature="e#2993#2994#0" expanded="true" />
                 <element signature="e#3026#3027#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/kalah/Player.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="21" lean-forward="false" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
-              <folding>
-                <element signature="e#143#144#0" expanded="true" />
-                <element signature="e#171#172#0" expanded="true" />
-                <element signature="e#196#197#0" expanded="true" />
-                <element signature="e#221#222#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -176,6 +132,8 @@
         <option value="$PROJECT_DIR$/src/kalah/Player.java" />
         <option value="$PROJECT_DIR$/src/kalah/InvalidTurnException.java" />
         <option value="$PROJECT_DIR$/src/kalah/Board.java" />
+        <option value="$PROJECT_DIR$/src/kalah/BoardPrinter.java" />
+        <option value="$PROJECT_DIR$/src/kalah/BoardIO.java" />
         <option value="$PROJECT_DIR$/src/kalah/Kalah.java" />
       </list>
     </option>
@@ -227,17 +185,6 @@
               <item name="Kalah" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="kalah" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Kalah" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Kalah" type="462c0819:PsiDirectoryNode" />
-              <item name="kalah.jar" type="ab9368bb:PsiFileNode" />
-            </path>
-            <path>
-              <item name="Kalah" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Kalah" type="462c0819:PsiDirectoryNode" />
-              <item name="kalah.jar" type="ab9368bb:PsiFileNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -406,26 +353,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1524543056944</updated>
-      <workItem from="1524543058459" duration="29435000" />
+      <workItem from="1524543058459" duration="32615000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestKalah - 2018.04.26 at 17h 51m 29s.xml">
-      <configuration name="TestKalah" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestKalah - 2018.04.26 at 17h 55m 51s.xml">
-      <configuration name="TestKalah" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestKalah - 2018.04.26 at 17h 56m 19s.xml">
-      <configuration name="TestKalah" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestKalah - 2018.04.26 at 18h 01m 55s.xml">
-      <configuration name="TestKalah" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestKalah - 2018.04.26 at 18h 03m 08s.xml">
-      <configuration name="TestKalah" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="TestKalah - 2018.04.26 at 18h 05m 22s.xml">
       <configuration name="TestKalah" configurationId="JUnit" />
     </history-entry>
@@ -441,24 +373,39 @@
     <history-entry file="TestKalah - 2018.04.26 at 18h 13m 19s.xml">
       <configuration name="TestKalah" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="TestKalah - 2018.04.30 at 20h 45m 52s.xml">
+      <configuration name="TestKalah" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestKalah - 2018.04.30 at 20h 56m 13s.xml">
+      <configuration name="TestKalah" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestKalah - 2018.04.30 at 21h 01m 48s.xml">
+      <configuration name="TestKalah" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestKalah - 2018.04.30 at 21h 04m 57s.xml">
+      <configuration name="TestKalah" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestKalah - 2018.04.30 at 21h 12m 02s.xml">
+      <configuration name="TestKalah" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29435000" />
+    <option name="totallyTimeSpent" value="32615000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="809" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="808" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299566" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289855" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299566" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3299566" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3289855" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299566" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -566,30 +513,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/kalah/Board.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="120" column="9" lean-forward="true" selection-start-line="120" selection-start-column="9" selection-end-line="120" selection-end-column="9" />
-          <folding>
-            <element signature="e#2993#2994#0" expanded="true" />
-            <element signature="e#3026#3027#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/kalah.jar!/com/qualitascorpus/testsupport/MockIO.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="171" column="0" lean-forward="false" selection-start-line="171" selection-start-column="0" selection-end-line="171" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/kalah.jar!/test/full_game1.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-12">
           <caret line="205" column="29" lean-forward="false" selection-start-line="205" selection-start-column="29" selection-end-line="205" selection-end-column="29" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kalah/Kalah.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="22" column="47" lean-forward="false" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -603,12 +541,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/kalah/Kalah.java">
+    <entry file="jar://$PROJECT_DIR$/kalah.jar!/com/qualitascorpus/testsupport/MockIO.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="81" column="0" lean-forward="false" selection-start-line="81" selection-start-column="0" selection-end-line="87" selection-end-column="9" />
+        <state relative-caret-position="146">
+          <caret line="171" column="0" lean-forward="false" selection-start-line="171" selection-start-column="0" selection-end-line="171" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kalah/BoardIO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1390#1391#0" expanded="true" />
+            <element signature="e#1430#1431#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kalah/Board.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4">
+          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding>
+            <element signature="e#2993#2994#0" expanded="true" />
+            <element signature="e#3026#3027#0" expanded="true" />
           </folding>
         </state>
       </provider>
