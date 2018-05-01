@@ -1,4 +1,4 @@
-package kalah;
+package kalah.components;
 
 public enum  Player {
     PLAYER1("Player P1"),

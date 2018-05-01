@@ -1,4 +1,4 @@
-package kalah;
+package kalah.components;
 
 public class Store extends Pit {
 
@@ -8,7 +8,7 @@ public class Store extends Pit {
     }
 
     @Override
-    public boolean increment(Player currentPlayer) {
+    public boolean sow(Player currentPlayer) {
         if(currentPlayer == _player){
             _seedCount++;
             return true;

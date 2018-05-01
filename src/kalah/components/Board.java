@@ -1,6 +1,7 @@
-package kalah;
+package kalah.components;
 
-import com.sun.tools.classfile.ConstantPool;
+import kalah.exceptions.InvalidTurnException;
+import kalah.misc.MoveOutcome;
 
 public class Board {
 
@@ -48,12 +49,12 @@ public class Board {
     public int[] getBoardState(){
         int[] simplePits = new int[14];
         for(int i = 0; i < 14; i++){
-            simplePits[i] = _pits[i]._seedCount;
+            simplePits[i] = _pits[i].getSeedAmount();
         }
         return simplePits;
     }
 
-    public MoveOutcome makeMove(Player currentPlayer, int pitNo) throws InvalidTurnException{
+    public MoveOutcome makeMove(Player currentPlayer, int pitNo) throws InvalidTurnException {
        int pitIndex;
         if(currentPlayer.equals(Player.PLAYER1)){
             pitIndex = pitNo-1;
@@ -69,18 +70,18 @@ public class Board {
 
             if(i == seedCount){
                 if(_pits[(pitIndex+i)%14].getClass().equals(Store.class)){
-                    if(_pits[(pitIndex+i)%14].increment(currentPlayer)){
+                    if(_pits[(pitIndex+i)%14].sow(currentPlayer)){
                         return MoveOutcome.RepeatTurn;
                     }
-                } else if(_pits[(pitIndex+i)%14].isEmpty() && _pits[(pitIndex+i)%14].getClass().equals(House.class) && _pits[(pitIndex+i) % 14]._player == currentPlayer) {
-                    _pits[(pitIndex+i)%14].increment(currentPlayer);
+                } else if(_pits[(pitIndex+i)%14].isEmpty() && _pits[(pitIndex+i)%14].getClass().equals(House.class) && _pits[(pitIndex+i) % 14].getPlayer() == currentPlayer) {
+                    _pits[(pitIndex+i)%14].sow(currentPlayer);
 
                     capture((pitIndex+i)%14);
                     return MoveOutcome.Normal;
                 }
             }
 
-            if(!_pits[(pitIndex+i)%14].increment(currentPlayer)){
+            if(!_pits[(pitIndex+i)%14].sow(currentPlayer)){
                 seedCount++;
             }
         }
@@ -95,9 +96,9 @@ public class Board {
         int seedCount = _pits[pitIndex].empty() + _pits[oppPitIndex].empty();
 
         if(oppPitIndex < 6){
-            _pits[13]._seedCount += seedCount;
+            _pits[13].store(seedCount);
         }else {
-            _pits[6]._seedCount += seedCount;
+            _pits[6].store(seedCount);
         }
     }
 
@@ -110,12 +111,12 @@ public class Board {
         switch(player){
             case PLAYER1:
                 for(int i = 0; i < 7; i++) {
-                    sum += _pits[i]._seedCount;
+                    sum += _pits[i].getSeedAmount();
                 }
                 break;
             case PLAYER2:
                 for(int i = 7; i < 14; i++) {
-                    sum += _pits[i]._seedCount;
+                    sum += _pits[i].getSeedAmount();
                 }
                 break;
         }

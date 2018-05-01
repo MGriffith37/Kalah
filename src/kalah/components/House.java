@@ -1,4 +1,4 @@
-package kalah;
+package kalah.components;
 
 public class House extends Pit{
     int _id;
@@ -10,7 +10,7 @@ public class House extends Pit{
     }
 
     @Override
-    public boolean increment(Player currentPlayer) {
+    public boolean sow(Player currentPlayer) {
         _seedCount++;
         return true;
     }

@@ -1,8 +1,9 @@
-package kalah;
+package kalah.misc;
 
 
 import com.qualitascorpus.testsupport.IO;
-import com.qualitascorpus.testsupport.MockIO;
+import kalah.components.Board;
+import kalah.components.Player;
 
 public class BoardIO {
     private Board _board;

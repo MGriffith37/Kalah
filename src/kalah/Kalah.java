@@ -2,6 +2,10 @@ package kalah;
 
 import com.qualitascorpus.testsupport.IO;
 import com.qualitascorpus.testsupport.MockIO;
+import kalah.components.Board;
+import kalah.misc.BoardIO;
+import kalah.misc.MoveOutcome;
+import kalah.components.Player;
 
 /**
  * This class is the starting point for a Kalah implementation using
