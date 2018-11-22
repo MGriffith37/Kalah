@@ -1,8 +1,7 @@
-package kalah.misc;
+package kalah.components.Board;
 
 
 import com.qualitascorpus.testsupport.IO;
-import kalah.components.Board;
 import kalah.components.Player;
 
 public class BoardIO {

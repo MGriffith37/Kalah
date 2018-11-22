@@ -1,16 +1,14 @@
-package kalah.components;
+package kalah.components.Pit;
 
-public abstract class Pit {
+import kalah.components.Player;
+
+public class Pit{
     protected Player _player;
     protected int _seedCount;
-
 
     public Pit(Player associatedPlayer){
         this._player = associatedPlayer;
     }
-
-    public abstract boolean sow(Player currentPlayer);
-    public abstract int empty();
 
     public boolean isEmpty(){
         if(_seedCount == 0){
@@ -25,7 +23,6 @@ public abstract class Pit {
     public int getSeedAmount(){
         return _seedCount;
     }
-
     public Player getPlayer(){
         return _player;
     }

@@ -2,9 +2,10 @@ package kalah;
 
 import com.qualitascorpus.testsupport.IO;
 import com.qualitascorpus.testsupport.MockIO;
-import kalah.components.Board;
-import kalah.misc.BoardIO;
-import kalah.misc.MoveOutcome;
+import kalah.components.Board.Board;
+import kalah.components.Board.BoardGenerator;
+import kalah.components.Board.BoardIO;
+import kalah.components.MoveOutcome;
 import kalah.components.Player;
 
 /**
@@ -17,8 +18,17 @@ public class Kalah {
 	}
 
 	public void play(IO io) {
+		/** By default generates a board with 14 total pits and 4 starting seeds
+		 *  Can generate a new board using the alternative constructor BoardGenerator(int totalPits, int startingSeedCount)
+		 *
+		 *  E.g. BoardGenerator bg = new BoardGenerator(18, 6)
+		 *  Generates a board where each player has 8 houses and a store, and each house starts with 6 seeds
+		 *  Note: totalPits must be an even number
+		 */
+		BoardGenerator bg = new BoardGenerator();
 
-		Board gameBoard = new Board();
+		Board gameBoard = bg.generateBoard();
+
 		Player currentPlayer = Player.PLAYER1;
 
 		BoardIO boardIO = new BoardIO(gameBoard, io);
@@ -36,6 +46,7 @@ public class Kalah {
 			try {
 				outcome = gameBoard.makeMove(currentPlayer, houseNumber);
 			} catch (Exception e) {
+				System.out.print(e.getMessage());
 				io.println("House is empty. Move again.");
 				outcome = MoveOutcome.RepeatTurn;
 			}
